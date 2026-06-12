@@ -2,7 +2,7 @@ import React from 'react';
 import { fraudService, type FraudReport } from '@/api/services';
 import Header from '@/components/landing/Header';
 import Footer from '@/components/landing/Footer';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RefreshCcw } from 'lucide-react';
 
