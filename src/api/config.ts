@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://localhost:7098/api',
+  baseURL: 'https://backexamen2-production.up.railway.app/',
   headers: {
     'Content-Type': 'application/json',
   },
