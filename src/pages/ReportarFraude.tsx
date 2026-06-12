@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from '@tanstack/react-form';
-import { fraudService, type CreateFraudDto} from '@/api/services';
+import { fraudService} from '@/api/services';
 import Header from '@/components/landing/Header';
 import Footer from '@/components/landing/Footer';
 import { Button } from '@/components/ui/button';
@@ -153,7 +153,7 @@ const ReportarFraude = () => {
               <div className="pt-4">
                 <form.Subscribe
                   selector={(state) => [state.canSubmit, state.isSubmitting]}
-                  children={([canSubmit, isSubmitting]) => (
+                  children={([canSubmit]) => (
                     <Button 
                       type="submit" 
                       disabled={!canSubmit || status === 'loading'}
