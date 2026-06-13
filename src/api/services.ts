@@ -16,12 +16,12 @@ export interface CreateFraudDto {
 
 export const fraudService = {
   getAll: async (): Promise<FraudReport[]> => {
-    const response = await api.get<FraudReport[]>('/fraud');
+    const response = await api.get<FraudReport[]>('/api/fraud');
     return response.data;
   },
 
   create: async (data: CreateFraudDto): Promise<FraudReport> => {
-    const response = await api.post<FraudReport>('/fraud', data);
+    const response = await api.post<FraudReport>('/api/fraud', data);
     return response.data;
   },
 };
