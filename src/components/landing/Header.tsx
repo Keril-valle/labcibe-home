@@ -47,6 +47,11 @@ const Header = () => {
     window.location.href = REPORTS_URL;
   };
 
+  const goToReports = () => {
+    closeMenu();
+    navigate("/reportes");
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-soft">
       {/* Skip Navigation Link */}
@@ -102,12 +107,21 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
-            <Button
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300"
-              onClick={goToReportWizard}
-            >
-              Reportar fraude
-            </Button>
+            <div className="flex items-center gap-3 ml-2">
+              <Button
+                variant="outline"
+                className="rounded-full font-semibold border-primary text-primary hover:bg-primary/10 transition-all duration-300"
+                onClick={goToReports}
+              >
+                Ver reportes
+              </Button>
+              <Button
+                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                onClick={goToReportWizard}
+              >
+                Reportar fraude
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -149,12 +163,21 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
-              <Button
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold shadow-md hover:shadow-lg transition-all duration-300 w-full"
-                onClick={goToReportWizard}
-              >
-                Reportar fraude
-              </Button>
+              <div className="flex flex-col gap-3 mt-2">
+                <Button
+                  variant="outline"
+                  className="font-semibold border-primary text-primary hover:bg-primary/10 transition-all duration-300 w-full"
+                  onClick={goToReports}
+                >
+                  Ver reportes
+                </Button>
+                <Button
+                  className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold shadow-md hover:shadow-lg transition-all duration-300 w-full"
+                  onClick={goToReportWizard}
+                >
+                  Reportar fraude
+                </Button>
+              </div>
             </div>
           </nav>
         )}
